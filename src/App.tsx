@@ -5,14 +5,14 @@ import type { Schema } from '../amplify/data/resource';
 
 const client = generateClient<Schema>();
 
-async function sayHello() {
-  const result = await client.queries.sayHello({
-    name: 'Barosanu',
-  });
-  console.log(result);
-}
-
 function App() {
+  async function sayHello() {
+    const result = await client.queries.sayHello({
+      name: 'Barosanu',
+    });
+    console.log(result);
+  }
+
   return (
     <>
       <button onClick={sayHello}>Click me</button>
